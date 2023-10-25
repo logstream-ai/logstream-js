@@ -1,6 +1,6 @@
 {
   "name": "@logstream/logstream",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "The TypeScript client library for logstream",
   "author": "Logstream <hello@logsteam.ai>",
   "homepage": "https://github.com/logstream-ai/logstream-js/tree/main#readme",
@@ -12,8 +12,8 @@
     "streaming",
     "logstream"
   ],
-  "main": "./dist/index.js",
-  "types": "dist/es6/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
