@@ -1,6 +1,6 @@
 {
   "name": "@logstream/logstream",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The TypeScript client library for logstream",
   "author": "Logstream <hello@logsteam.ai> (https://logstream.ai)",
   "license": "ISC",
