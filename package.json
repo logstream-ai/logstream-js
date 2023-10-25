@@ -1,8 +1,9 @@
 {
   "name": "@logstream/logstream",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "The TypeScript client library for logstream",
-  "author": "Logstream <hello@logsteam.ai> (https://logstream.ai)",
+  "author": "Logstream <hello@logsteam.ai>",
+  "homepage": "https://github.com/logstream-ai/logstream-js/tree/main#readme",
   "license": "ISC",
   "keywords": [
     "log",
@@ -11,12 +12,25 @@
     "streaming",
     "logstream"
   ],
-  "main": "./src",
+  "main": "./dist/index.js",
+  "types": "dist/es6/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logstream-ai/logstream-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "prepublish": "tsc",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
