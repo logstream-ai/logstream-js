@@ -1,4 +1,4 @@
-# @logstream/logstream-js
+# @logstream/logstream
 
 This is a TypeScript client library for logstream. It allows you to log information from your JavaScript applications to your logstream server directly.
 
