@@ -105,7 +105,7 @@ class Channel {
       if (this.opts.timestamp) {
         value = value
           .split("\n")
-          .map((line) => {
+          .map((line: string) => {
             return (
               styles.reset.open +
               styles.gray.open +

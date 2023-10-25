@@ -51,10 +51,10 @@ function getValueType(
   return typeof value;
 }
 
-export function formatJSON(obj, indent = 1): string {
+export function formatJSON(obj: any, indent = 1): string {
   let jsonStr = "";
 
-  const colorStyles = {
+  const colorStyles: Record<string, string> = {
     key: whiteBright.open,
     string: green.open,
     number: yellow.open,
@@ -66,11 +66,11 @@ export function formatJSON(obj, indent = 1): string {
     reset: reset.open,
   };
 
-  function colorize(type, text) {
+  function colorize(type: any, text: any) {
     return `${colorStyles[type]}${text}${colorStyles.reset}`;
   }
 
-  function handleValue(type, value) {
+  function handleValue(type: any, value: any) {
     return `${colorize(type, JSON.stringify(value))},\n`;
   }
 
