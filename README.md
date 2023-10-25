@@ -5,7 +5,7 @@ This is a TypeScript client library for logstream. It allows you to log informat
 ## Installation
 
 ```bash
-npm install @logstream/logstream-js
+npm install @logstream/logstream
 ```
 
 ## Importing Logstream
@@ -13,7 +13,7 @@ npm install @logstream/logstream-js
 Firstly, you would need to import the `Logstream` from the `@logstream/logstream-js` library.
 
 ```typescript
-import { Logstream } from "@logstream/logstream-js";
+import { Logstream } from "@logstream/logstream";
 ```
 
 ## Initializing Logstream

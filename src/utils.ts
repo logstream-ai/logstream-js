@@ -15,8 +15,6 @@ export function formatNumber(number: number) {
   return styles.yellow.open + number + styles.blue.close;
 }
 
-console.log(styles);
-
 const { whiteBright, green, yellow, blue, red, magenta, cyan, reset, gray } =
   styles;
 

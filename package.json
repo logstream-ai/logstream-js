@@ -1,5 +1,5 @@
 {
-  "name": "logstream-js",
+  "name": "@logstream/logstream",
   "version": "0.1.0",
   "description": "The TypeScript client library for logstream",
   "author": "Logstream <hello@logsteam.ai> (https://logstream.ai)",
@@ -11,6 +11,9 @@
     "streaming",
     "logstream"
   ],
-  "dependencies": {
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
