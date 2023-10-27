@@ -18,10 +18,10 @@ import { Logstream } from "@logstream/logstream";
 
 ## Initializing Logstream
 
-To initialize logstream, create a new instance of `Logstream`. As an argument, you need to pass the URL to your logstream server.
+To initialize logstream, create a new instance of `Logstream`. As an argument, you need to pass the forwarding URL to your logstream organisation.
 
 ```typescript
-const logstream = new Logstream("http://localhost:8080/v1/stdin?token=123");
+const logstream = new Logstream("https://logstream.ai/v1/stdin?token=123..");
 ```
 
 ## Creating a Log Channel

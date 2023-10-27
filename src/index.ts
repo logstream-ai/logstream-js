@@ -2,28 +2,75 @@ import styles from "./styles";
 import { formatJSON, formatNumber, getFormattedDateTime } from "./utils";
 
 interface ChannelOpts {
+  /**
+   * Whether to prepend a timestamp to each log message
+   *
+   * @default true
+   */
   timestamp?: boolean;
 }
 
 class Logstream {
+  /**
+   * The forwarding URL of an organisation.
+   *
+   * You can get a new forwarding URL on https://logstream.ai/forwarding
+   * if you have the required permissions.
+   */
   url: string;
 
   constructor(url: string) {
     this.url = url;
   }
 
-  channel(name: string, opts: ChannelOpts = { timestamp: true }): Channel {
+  /**
+   * Create or open a channel to log to
+   *
+   * @example
+   * ```javascript
+   * const logstream = new Logstream("https://logstream.ai/v1/stdin?token=123..");
+   *
+   * const channel = logstream.channel("My first log");
+   *
+   * channel.log("Hello world!");
+   * ```
+   */
+  channel(
+    /**
+     * The name of the channel
+     */
+    name: string,
+    opts: ChannelOpts = { timestamp: true }
+  ): Channel {
     return new Channel(this, name, opts);
   }
 }
 
 class Channel {
+  /**
+   * The name of the channel
+   */
   name: string;
   opts: ChannelOpts;
   private logstream: Logstream;
   private writer: WritableStreamDefaultWriter<string>;
 
-  constructor(logstream: Logstream, name: string, opts: ChannelOpts) {
+  constructor(
+    /**
+     * A Logstream instance.
+     *
+     * You can create a new Logstream instance like this:
+     * ```javascript
+     * const logstream = new Logstream("https://logstream.ai/v1/stdin?token=123..");
+     * ```
+     */
+    logstream: Logstream,
+    /**
+     * The name of the channel
+     */
+    name: string,
+    opts: ChannelOpts
+  ) {
     this.logstream = logstream;
     this.name = name;
     this.opts = opts;
@@ -144,9 +191,33 @@ class Channel {
   }
 }
 
+/**
+ * Globally register the console.log and console.error functions to send
+ * their output to Logstream.
+ *
+ * @example
+ * ```javascript
+ * import { register } from "@logstream/logstream-js";
+ *
+ * register()
+ *
+ * console.log("Hello world!")
+ * ```
+ */
 function register(
+  /**
+   * The forwarding URL of an organisation.
+   *
+   * You can get a new forwarding URL on https://logstream.ai/forwarding
+   * if you have the required permissions.
+   */
   url: string,
-  opts: { channel: string } = { channel: "My first log" }
+  opts: {
+    /**
+     * The name of the channel to send the logs to.
+     */
+    channel: string;
+  } = { channel: "My first log" }
 ) {
   const logstream = new Logstream(url);
   const channel = logstream.channel(opts.channel);
