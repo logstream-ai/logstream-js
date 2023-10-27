@@ -10,7 +10,7 @@ npm install @logstream/logstream
 
 ## Importing Logstream
 
-Firstly, you would need to import the `Logstream` from the `@logstream/logstream-js` library.
+Firstly, you would need to import the `Logstream` from the `@logstream/logstream` library.
 
 ```typescript
 import { Logstream } from "@logstream/logstream";

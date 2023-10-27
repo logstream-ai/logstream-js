@@ -199,7 +199,9 @@ class Channel {
  * ```javascript
  * import { register } from "@logstream/logstream-js";
  *
- * register()
+ * register("https://logstream.ai/v1/stdin?token=123..", {
+ *   channel: "My first log"
+ * })
  *
  * console.log("Hello world!")
  * ```
